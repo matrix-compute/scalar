@@ -425,6 +425,35 @@ export const createWorkspaceStore = (router: Router, persistData = true) => {
     return [...flattenedServers, ...flattenedEnvs]
   })
 
+  const getParsedEnvironmentVariables = (uid: string) => {
+    return computed(() => {
+      const environment = environments[uid]
+      if (environment) {
+        try {
+          const raw = environment.raw
+          const parsed = JSON.parse(raw)
+          const variables = Object.entries(parsed).map(([key, value]) => ({
+            key,
+            value: value as string,
+          }))
+          // Ensure there is always an empty row at the end
+          if (
+            variables.length === 0 ||
+            variables[variables.length - 1].key !== '' ||
+            variables[variables.length - 1].value !== ''
+          ) {
+            variables.push({ key: '', value: '' })
+          }
+          return variables
+        } catch (e) {
+          console.error('Failed to parse environment variables:', e)
+          return [{ key: '', value: '' }]
+        }
+      }
+      return [{ key: '', value: '' }]
+    })
+  }
+
   // ---------------------------------------------------------------------------
   // COOKIES
 
@@ -997,6 +1026,7 @@ export const createWorkspaceStore = (router: Router, persistData = true) => {
     modalState,
     isReadOnly,
     router,
+    getParsedEnvironmentVariables,
     // ---------------------------------------------------------------------------
     // METHODS
     findRequestFolders,
