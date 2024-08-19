@@ -89,6 +89,10 @@
     "./entities/workspace/collection": {
       "import": "./dist/entities/workspace/collection/index.js",
       "types": "./dist/entities/workspace/collection/index.d.ts"
+    },
+    "./diff": {
+      "import": "./dist/diff/index.js",
+      "types": "./dist/diff/index.d.ts"
     }
   },
   "files": [
@@ -97,7 +101,9 @@
   ],
   "module": "dist/index.js",
   "dependencies": {
+    "@hyperjump/json-schema": "^1.9.6",
     "@scalar/object-utils": "workspace:*",
+    "@scalar/openapi-types": "workspace:*",
     "@scalar/themes": "workspace:*",
     "@scalar/types": "workspace:*",
     "axios": "^1.6.8",

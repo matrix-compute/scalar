@@ -97,12 +97,14 @@ export const importSpecToWorkspace = async (
         method: method.toUpperCase() as RequestMethod,
         path: pathString,
         tags: operation.tags || ['default'],
-        description: operation.description,
-        operationId: operation.operationId,
-        security: operation.security,
         summary: operation.summary || pathString,
-        externalDocs: operation.externalDocs,
-        requestBody: operation.requestBody,
+        // Merge all of the base spec
+        // externalDocs: operation.externalDocs,
+        // requestBody: operation.requestBody,
+        // description: operation.description,
+        // operationId: operation.operationId,
+        // security: operation.security,
+        ...operation,
         parameters,
       })
 
