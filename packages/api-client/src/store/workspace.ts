@@ -34,6 +34,7 @@ import {
   type Server,
   type ServerPayload,
   createServer,
+  getServerVariableExamples,
 } from '@scalar/oas-utils/entities/workspace/server'
 import {
   type Request,
@@ -304,12 +305,15 @@ export const createWorkspaceStore = (router: Router, persistData = true) => {
         request.childUids.some((uid) => t === requestExamples[uid].name),
       )
 
+    const serverVariables = server ? getServerVariableExamples(server) : {}
+
     const example = createRequestExample({
       url: server?.url ? `{{${server?.url}}}${request.path}` : request.path,
       requestUid: request.uid,
       parameters,
       name,
       body,
+      serverVariables,
     })
 
     requestExampleMutators.add(example)
