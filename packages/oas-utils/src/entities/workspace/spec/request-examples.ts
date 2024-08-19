@@ -86,6 +86,7 @@ const requestExampleSchema = z.object({
     .optional()
     .default({}),
   auth: z.record(z.string(), z.any()).default({}),
+  serverVariables: z.record(z.string(), z.array(z.string())).optional(),
 })
 
 /** A single set of params for a request example */
