@@ -2,6 +2,7 @@
 import type { WorkspaceStore } from '@/store/workspace'
 import { ScalarButton, ScalarIcon, ScalarTooltip } from '@scalar/components'
 import type { Environment } from '@scalar/oas-utils/entities/workspace/environment'
+import { variableRegex } from '@scalar/oas-utils/helpers'
 import {
   Decoration,
   type DecorationSet,
@@ -165,10 +166,9 @@ export const pillPlugin = (props: {
 
         for (const { from, to } of view.visibleRanges) {
           const text = view.state.doc.sliceString(from, to)
-          const regex = /{{(.*?)}}/g
           let match
 
-          while ((match = regex.exec(text)) !== null) {
+          while ((match = variableRegex.exec(text)) !== null) {
             const start = from + match.index
             const end = start + match[0].length
             const variableName = match[1]
