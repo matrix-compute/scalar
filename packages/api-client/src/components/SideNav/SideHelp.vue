@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useWorkspace } from '@/store/workspace'
 import {
   ScalarButton,
   ScalarDropdown,
@@ -6,6 +7,8 @@ import {
   ScalarDropdownItem,
   ScalarIcon,
 } from '@scalar/components'
+
+const { activeWorkspace } = useWorkspace()
 </script>
 <template>
   <ScalarDropdown
@@ -21,6 +24,19 @@ import {
 
     <!-- Workspace list -->
     <template #items>
+      <router-link
+        class="no-underline"
+        :to="`/workspace/${activeWorkspace.uid}/settings/general`">
+        <ScalarDropdownItem class="flex items-center gap-1.5 w-full">
+          <div class="flex items-center justify-center">
+            <ScalarIcon
+              icon="Settings"
+              size="xs"
+              thickness="1.75" />
+          </div>
+          <span>Settings</span>
+        </ScalarDropdownItem>
+      </router-link>
       <span class="px-2.5 py-1.5 text-xs text-c-2 font-medium">Support</span>
       <a
         class="no-underline block"

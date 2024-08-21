@@ -66,6 +66,7 @@ export const ICONS = [
   'Roadmap',
   'Search',
   'Server',
+  'Settings',
   'Show',
   'Sort',
   'Terminal',

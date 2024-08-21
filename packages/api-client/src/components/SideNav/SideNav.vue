@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import DarkModeIconToggle from '@/components/DarkModeToggle/DarkModeIconToggle.vue'
 import { ROUTES } from '@/constants'
 import { useRouter } from 'vue-router'
 
@@ -32,9 +31,6 @@ const { currentRoute } = useRouter()
     <ul class="mt-auto flex flex-col py-1.5">
       <li class="flex items-center no-drag-region">
         <SideHelp />
-      </li>
-      <li class="flex items-center no-drag-region">
-        <DarkModeIconToggle />
       </li>
     </ul>
   </nav>
