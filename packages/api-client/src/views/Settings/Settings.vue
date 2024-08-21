@@ -18,7 +18,7 @@ type SettingsGroup = {
 const settings: Record<string, SettingsGroup> = {
   general: {
     component: SettingsGeneral,
-    title: 'General',
+    title: 'general',
   },
 }
 
@@ -34,7 +34,7 @@ const activeSetting = ref('general')
               <SidebarListElement
                 v-for="setting in settings"
                 :key="setting.title"
-                class="text-xs"
+                class="text-xs capitalize"
                 :variable="{
                   uid: setting.title,
                   name: setting.title,
