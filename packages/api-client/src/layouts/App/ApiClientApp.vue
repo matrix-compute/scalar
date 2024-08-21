@@ -31,7 +31,7 @@ const handleNewTab = (item: { name: string; uid: string }) => {
 
 onMounted(() => {
   watchEffect(() => {
-    document.body.classList.toggle('dark-mode', isDark.value)
+    document.body.classList.toggle('dark-mode', !!isDark.value)
     document.body.classList.toggle('light-mode', !isDark.value)
   })
 })
