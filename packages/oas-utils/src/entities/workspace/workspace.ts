@@ -1,4 +1,4 @@
-import { HOTKEY_EVENT_NAMES, KEYDOWN_KEYS } from '@/entities/workspace/consts'
+import { HOTKEY_EVENT_NAMES, KEYDOWN_KEYS } from '@/entities/workspace/hotkeys'
 import { themeIds } from '@scalar/themes'
 import { z } from 'zod'
 

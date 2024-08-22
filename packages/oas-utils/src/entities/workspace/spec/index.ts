@@ -1,4 +1,5 @@
-export * from './parameters'
+export * from './collection'
+export * from './server'
 export * from './requests'
 export * from './request-examples'
-export * from './components'
+export * from './spec-objects'
