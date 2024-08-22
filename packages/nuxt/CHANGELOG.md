@@ -1,5 +1,13 @@
 # @scalar/nuxt
 
+## 0.2.84
+
+### Patch Changes
+
+- Updated dependencies [bbe5b49]
+  - @scalar/api-client@2.0.59
+  - @scalar/api-reference@1.25.6
+
 ## 0.2.83
 
 ### Patch Changes
