@@ -23,7 +23,7 @@
     "@scalar/galaxy": "workspace:*",
     "@scalar/themes": "workspace:*",
     "@vueuse/core": "^10.10.0",
-    "monaco-editor": "^0.47.0",
+    "monaco-editor": "^0.52.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.0"
   },
