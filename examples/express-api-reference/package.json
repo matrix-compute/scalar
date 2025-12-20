@@ -17,7 +17,7 @@
   "type": "module",
   "dependencies": {
     "@scalar/express-api-reference": "workspace:*",
-    "express": "^4.19.2",
+    "express": "^4.21.2",
     "swagger-jsdoc": "^6.2.8"
   },
   "devDependencies": {
