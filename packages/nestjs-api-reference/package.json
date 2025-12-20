@@ -39,7 +39,7 @@
   "module": "dist/index.js",
   "dependencies": {
     "@scalar/api-reference": "workspace:*",
-    "express": "^4.19.2"
+    "express": "^4.21.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
