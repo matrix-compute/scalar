@@ -49,7 +49,7 @@
     "dist"
   ],
   "dependencies": {
-    "@nuxt/kit": "^3.12.3",
+    "@nuxt/kit": "^3.16.0",
     "@scalar/api-client": "workspace:*",
     "@scalar/api-reference": "workspace:*"
   },
